@@ -1,12 +1,82 @@
 .advantages {
-  min-height: 100vh;
   padding: 8rem;
 
   &__title {
     font-weight: 500;
-    font-size: 36px;
+    font-size: 3.6rem;
     line-height: 200%;
     color: #564E4E;
     margin-bottom: 1.6rem;
   }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    overflow: hidden;
+  }
+
+  &__card {
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: all .5s;
+    border: 1px solid transparent;
+    min-width: 33rem;
+    width: 40%;
+
+    @media screen and (min-width: 1708px) {
+      width: 21%;
+    }
+
+    &:hover {
+      border-color: #FADCD9;
+      box-shadow: .4rem .2rem 1rem .2rem rgba(247, 148, 137, 0.2);
+    }
+
+    &-icon {
+      margin-bottom: 1rem;
+      background: #FAF5F2;
+      border-radius: 50%;
+      height: 6rem;
+      width: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &_block {
+        display: flex;
+      }
+
+      img {
+        padding: 1rem;
+        height: 3.5rem;
+        width: 3.5rem;
+      }
+    }
+
+    &-title {
+      margin-bottom: 1rem;
+      font-weight: 500;
+      font-size: 1.8rem;
+      line-height: 200%;
+      color: #564E4E;
+    }
+
+    &-description {
+      margin-bottom: 2rem;
+      font-weight: 400;
+      font-size: 1.8rem;
+      line-height: 200%;
+      color: #564E4E;
+    }
+
+    &-link {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 200%;
+      color: #F79489;
+    }
+  }
 }
+
