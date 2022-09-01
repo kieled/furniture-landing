@@ -11,7 +11,7 @@ gulp.task('server', function() {
 
     browserSync({
         server: {
-            baseDir: "public"
+            baseDir: "docs"
         }
     });
 
@@ -24,7 +24,7 @@ gulp.task('styles', function() {
         .pipe(rename({suffix: '.min', prefix: ''}))
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest("public/styles"))
+        .pipe(gulp.dest("docs/styles"))
         .pipe(browserSync.stream());
 });
 
@@ -36,29 +36,29 @@ gulp.task('watch', function() {
 gulp.task('html', function () {
     return gulp.src("src/*.html")
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest("public/"));
+        .pipe(gulp.dest("docs/"));
 });
 
 gulp.task('scripts', function () {
     return gulp.src("src/js/**/*.js")
-        .pipe(gulp.dest("public/js"));
+        .pipe(gulp.dest("docs/js"));
 });
 
 gulp.task('fonts', function () {
     return gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest("public/fonts"));
+        .pipe(gulp.dest("docs/fonts"));
 });
 
 gulp.task('icons', function () {
     return gulp.src("src/assets/icons/**/*")
-        .pipe(gulp.dest("public/assets/icons"));
+        .pipe(gulp.dest("docs/assets/icons"));
 });
 
 
 gulp.task('images', function () {
     return gulp.src("src/assets/images/**/*")
         .pipe(imagemin())
-        .pipe(gulp.dest("public/assets/images"));
+        .pipe(gulp.dest("docs/assets/images"));
 });
 
 gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'html', 'images'));
