@@ -1,0 +1,46 @@
+.products {
+  padding: 8rem;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 200%;
+    color: #564E4E;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  &__item {
+    width: 20%;
+    &-body {
+      padding: 2rem;
+    }
+    &-image {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      background: #F6F6F6;
+
+      &:before{
+        content: "";
+        display: block;
+        padding-top: 100%;
+      }
+
+      img {
+        position:  absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+      }
+    }
+  }
+}

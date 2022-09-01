@@ -2,12 +2,19 @@
 
 html {
   font-size: 10px;
+
+  @media screen and (max-width: 1064px) {
+    font-size: 8px;
+  }
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   font-style: normal;
   font-weight: 500;
+  font-size: 18px;
+  line-height: 200%;
+  color: #564E4E;
 }
 
 * {
@@ -24,3 +31,5 @@ section {
 @import "header";
 @import "advantages";
 @import "categories";
+@import "utils";
+@import "products";
